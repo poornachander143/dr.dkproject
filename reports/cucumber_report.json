@@ -1,0 +1,101 @@
+[
+  {
+    "id": "input-step",
+    "uri": "features/google.feature",
+    "keyword": "Feature",
+    "name": "Input Step",
+    "description": "",
+    "line": 1,
+    "elements": [
+      {
+        "id": "input-step;user-open-the-google-page",
+        "keyword": "Scenario",
+        "name": "User open the google page",
+        "description": "",
+        "line": 3,
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Given ",
+            "name": "User can open the google page",
+            "line": 4,
+            "match": {
+              "location": "features/step_definitions/google.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17721274000
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "User can search page wit item",
+            "line": 5,
+            "match": {
+              "location": "features/step_definitions/google.rb:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5255032200
+            }
+          },
+          {
+            "keyword": "When ",
+            "name": "User can click the search button",
+            "line": 6,
+            "match": {
+              "location": "features/step_definitions/google.rb:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 732232300
+            }
+          },
+          {
+            "keyword": "Then ",
+            "name": "Usen can open the search item",
+            "line": 7,
+            "match": {
+              "location": "features/step_definitions/google.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1643065000
+            }
+          }
+        ],
+        "before": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:3"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6207045000
+            }
+          }
+        ],
+        "after": [
+          {
+            "match": {
+              "location": "features/support/hooks.rb:19"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 28300
+            }
+          },
+          {
+            "match": {
+              "location": "features/support/hooks.rb:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 228300
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

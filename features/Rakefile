@@ -1,0 +1,18 @@
+require 'rubygems'
+require 'cucumber'
+require 'cucumber/rake/task'
+require 'rufus-scheduler'
+
+Cucumber::Rake::Task.new(:features) do |t|
+  t.profile = 'default'
+end
+
+task :default => :features
+
+scheduler = Rufus::Scheduler.new
+
+scheduler.every '20m' do
+  system("bundle exec cucumber features/your_feature_file.feature")
+end
+
+scheduler.join
