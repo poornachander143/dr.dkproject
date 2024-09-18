@@ -13,6 +13,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #gem 'cucumber-html-reporter'
 
 gem 'report_builder'
+gem 'rspec-expectations'
+
 
 
 
