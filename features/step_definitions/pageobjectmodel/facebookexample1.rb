@@ -25,4 +25,5 @@ end
 
 Then('User can login sucessfully') do
   $facebook.successfulllogin
+  $facebook.alert_button
 end

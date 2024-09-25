@@ -10,6 +10,7 @@ class LoginPage
   def visit(url)
     @browser.navigate.to(url)
     @browser.find_element(:name, 'submitAll').click;
+    @browser.manage.window.maximize
   end
   
   def click_loginbutton

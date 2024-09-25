@@ -39,12 +39,15 @@ def facebookloginbutton
 end
 
 def successfulllogin
-  element = @browser.find_element(:xpath, "(//span[@class='x1lliihq x6ikm8r x10wlt62 x1n2onr6'])[1]")
+  expect(@browser.find_element(:xpath, "(//span[@class='x1lliihq x6ikm8r x10wlt62 x1n2onr6'])[1]").text).to eq('Vuppala Poornachander')
+  sleep 5
+end
+
+def alert_button
+  alert = @browser.switch_to.alert
+  alert.accept
+end
+end
   
-  # Get the text from the element
-  text = element.text
-  #expect(@browser.find_element(:xpath, "(//span[@class='x1lliihq x6ikm8r x10wlt62 x1n2onr6'])[1]").text).to eq('Vuppala Poornachander')
-  expect(text).to eq('Vuppala Poornachander')
-end
-end
+
 
