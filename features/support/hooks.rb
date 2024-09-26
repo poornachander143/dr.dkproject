@@ -8,6 +8,7 @@ Before do |scenario|
   $login1 = SignupPage.new(@browser)
   $facebook = Facebookloginpage.new(@browser)
   $drtv = Drtvpage.new(@browser)
+  #$demoqa = demoqapage.new(@browser)
   
   
 end

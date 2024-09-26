@@ -28,13 +28,60 @@ class Drtvpage
   def livepage
     @browser.navigate.forward
     sleep 4
-    @browser.find_element(:xpath, "//a[@aria-current='page'][normalize-space()='LIVE']").click
+    @browser.find_element(:xpath, "(//a[@class='primary-nav__entry-link'])[2]").click
     sleep 4
   end
   
   def scrollingdrtvpage2
     @browser.execute_script("window.scrollTo(0, document.body.scrollHeight)")
-        
+    @browser.execute_script("window.scrollTo(document.body.scrollHeight, 0)")
+  end
+  
+  def kategorierpage
+    @browser.navigate.forward
+    sleep 4
+    @browser.find_element(:xpath, "(//a[@class='primary-nav__entry-link'])[3]").click
+    sleep 4
+  end
+  
+  def scrollingdrtvpage3
+    @browser.execute_script("window.scrollTo(0, document.body.scrollHeight)")   
+    @browser.execute_script("window.scrollTo(document.body.scrollHeight, 0)")
+  end
+  
+  def barnpage
+    @browser.navigate.forward
+    sleep 4
+    @browser.find_element(:xpath, "(//a[@class='primary-nav__entry-link'])[4]").click
+    sleep 4
+  end
+    
+  def scrollingdrtvpage4
+    @browser.execute_script("window.scrollTo(0, document.body.scrollHeight)")   
+    @browser.execute_script("window.scrollTo(document.body.scrollHeight, 0)")
+  end
+  
+  def ultrapage
+    @browser.navigate.forward
+    sleep 4
+    @browser.find_element(:xpath, "(//a[@class='primary-nav__entry-link'])[5]").click
+    sleep 4
+  end
+    
+  def scrollingdrtvpage5
+    @browser.execute_script("window.scrollTo(0, document.body.scrollHeight)")   
+    @browser.execute_script("window.scrollTo(document.body.scrollHeight, 0)")
+  end
+    
+  def tvguidepage
+    @browser.navigate.forward
+    sleep 4
+    @browser.find_element(:xpath, "(//a[@class='primary-nav__entry-link'])[6]").click
+    sleep 4
+    end
+    
+  def scrollingdrtvpage6
+    @browser.execute_script("window.scrollTo(0, document.body.scrollHeight)")   
     @browser.execute_script("window.scrollTo(document.body.scrollHeight, 0)")
   end
   

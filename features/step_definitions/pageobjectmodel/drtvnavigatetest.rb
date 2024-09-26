@@ -25,39 +25,39 @@ When('User can check the scroll down and scroll up page2') do
 end
 
 When('User can navigate to KATEGORIER Page') do
-  pending # Write code here that turns the phrase above into concrete actions
+  $drtv.kategorierpage
 end
 
 When('User can check the scroll down and scroll up page3') do
-  pending # Write code here that turns the phrase above into concrete actions
+  $drtv.scrollingdrtvpage3
 end
 
 When('user can navigate to BARN Page') do
-  pending # Write code here that turns the phrase above into concrete actions
+  $drtv.barnpage
 end
 
 When('User can check the scroll down and scroll up page4') do
-  pending # Write code here that turns the phrase above into concrete actions
+  $drtv.scrollingdrtvpage4
 end
 
 When('User can navigate to ULTRA Page') do
-  pending # Write code here that turns the phrase above into concrete actions
+  $drtv.ultrapage
 end
 
 When('User can check the scroll down and scroll up page5') do
-  pending # Write code here that turns the phrase above into concrete actions
+  $drtv.scrollingdrtvpage5
 end
 
 When('User can navigate to TV-GUIDE Page') do
-  pending # Write code here that turns the phrase above into concrete actions
+  $drtv.tvguidepage
 end
 
 When('User can check the scroll down and scroll up page6') do
-  pending # Write code here that turns the phrase above into concrete actions
+  $drtv.scrollingdrtvpage6
 end
 
 Then('User is done sucessfull navigate regression test') do
-  pending # Write code here that turns the phrase above into concrete actions
+  @browser.close
 end
 
 
