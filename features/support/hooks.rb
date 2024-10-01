@@ -1,6 +1,7 @@
 require 'selenium-webdriver'
 require_relative 'C:\Users\LENOVO\OneDrive\Desktop\cucumberproject\pages\drsignuppage.rb'
 require_relative 'C:\Users\LENOVO\OneDrive\Desktop\cucumberproject\pages\facebookexample1page.rb'
+require_relative 'C:\Users\LENOVO\OneDrive\Desktop\cucumberproject\pages\practicepage.rb'
 Before do |scenario|
   DataMagic.load_for_scenario(scenario)
   @browser = Selenium::WebDriver.for :chrome
@@ -8,9 +9,9 @@ Before do |scenario|
   $login1 = SignupPage.new(@browser)
   $facebook = Facebookloginpage.new(@browser)
   $drtv = Drtvpage.new(@browser)
-  #$demoqa = demoqapage.new(@browser)
+  $demoqa = Demoqapage.new(@browser)
   
-  
+  # i want to add new file
 end
 
 After do |scenario|
