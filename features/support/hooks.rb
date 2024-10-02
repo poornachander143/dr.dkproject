@@ -12,6 +12,8 @@ Before do |scenario|
   $demoqa = Demoqapage.new(@browser)
   
   # i want to add new file
+  
+  #i create lkkkk
 end
 
 After do |scenario|
