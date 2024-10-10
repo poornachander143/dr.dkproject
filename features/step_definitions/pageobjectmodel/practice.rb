@@ -36,29 +36,30 @@ When('User can enter the Date Of Birth') do
   $demoqa.dob
 end
 
-When('User can enter the Subject {string}') do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+When('User can enter the Subject {string}') do |subjects|
+  $demoqa.sub(subjects)
 end
 
 When('User can click on hobies list') do
-  pending # Write code here that turns the phrase above into concrete actions
+  $demoqa.hobbies
 end
 
-When('User can enter the address {string}') do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+When('User can enter the address {string}') do |address|
+  $demoqa.currentplace(address)
 end
 
 When('User can choose state') do
-  pending # Write code here that turns the phrase above into concrete actions
+  $demoqa.state
 end
 
 When('User can choose the city') do
-  pending # Write code here that turns the phrase above into concrete actions
+  $demoqa.city
 end
 
 When('User can click on submit button') do
-  pending # Write code here that turns the phrase above into concrete actions
+  $demoqa.submitbutton
 end
+
 
 Then('User can done sucessfully signup') do
   pending # Write code here that turns the phrase above into concrete actions
