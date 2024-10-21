@@ -1,6 +1,6 @@
 Feature: Testing the demoqa 
 Scenario Outline: Testing the demoqa with all elements
-When User can open the demoqa url "<demoqa_url>"
+Given User can open the demoqa url "<demoqa_url>"
 When User can click on practie form hyperlink
 When User can enter the First Name "<first_Name>"
 When User can enter the Last Name  "<last_Name>"

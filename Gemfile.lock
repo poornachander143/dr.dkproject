@@ -134,6 +134,7 @@ DEPENDENCIES
   rake
   report_builder
   rspec
+  rspec-expectations
   rufus-scheduler
   selenium-cucumber
   selenium-webdriver
