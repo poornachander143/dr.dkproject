@@ -1,6 +1,6 @@
 require 'selenium-webdriver'
 require_relative 'C:\Users\LENOVO\OneDrive\Desktop\cucumberproject\pages\practicepage.rb'
-When('User can open the demoqa url {string}') do |demoqa_url|
+Given('User can open the demoqa url {string}') do |demoqa_url|
   $demoqa = Demoqapage.new(@browser)
   $demoqa.visitdemoqawebsite(demoqa_url)
   expect(@browser.current_url).to eq('https://demoqa.com/forms')
