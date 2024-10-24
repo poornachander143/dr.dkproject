@@ -34,7 +34,18 @@ When('User can scroll down and scroll up') do
   $hiperpage.scrolling
 end
 
-Then('User can open sucessfully hiper fiber internet') do
-  $hiperpage.sucess
+When('User can open the vismalogbuy {string}') do |logbuyurl|
+  #$logbuypage = Hiperpage.new(@browser)
+  $logbuypage.logbuywebsite(logbuyurl)
 end
+
+When('User can test the chatbox') do
+  $logbuypage.logbuychat
+end
+
+Then('User done sucessfully with testing the chatbox') do
+  $logbuypage.logbuychatsuccess
+end
+
+
 

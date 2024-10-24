@@ -9,15 +9,19 @@ When  User can navigate to OM US and click on ledige jobs on OM US dropbox
 When  User can navigate to kontakt
 When  User can navigate to Mit Hiper 
 When  User can scroll down and scroll up
-Then  User can open sucessfully hiper fiber internet
+#When  User can open sucessfully hiper fiber internet
+When  User can open the vismalogbuy "<logbuyurl>"
+When  User can test the chatbox
+Then  User done sucessfully with testing the chatbox
+
 
 
 
 
 Examples:
 
-|hiperurl |									|customeraddress														|
-|https://www.hiper.dk/ |		|clara pontoppidans vej 89, 2th, 2500 valby |
+|hiperurl 									|customeraddress														|						logbuyurl										|	
+|https://www.hiper.dk/  		|clara pontoppidans vej 89, 2th, 2500 valby |						https://www.logbuy.dk/			|
 
 
                                        
