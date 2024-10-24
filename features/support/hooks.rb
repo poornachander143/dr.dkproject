@@ -12,6 +12,7 @@ Before do |scenario|
   $drtv = Drtvpage.new(@browser)
   $demoqa = Demoqapage.new(@browser)
   $hiperpage = Hiperpage.new(@browser)
+  $logbuypage = Hiperpage.new(@browser)
   
   
 end

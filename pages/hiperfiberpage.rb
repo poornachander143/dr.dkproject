@@ -91,7 +91,26 @@ class Hiperpage
     sleep 4
   end
   
-  def sucess
-    @browser.quit
+  def logbuywebsite(logbuyurl)
+    @browser.navigate.to(logbuyurl)
+    sleep 4
+    @browser.find_element(:xpath, "//button[@class='consent__btn btn--accept btn--accept-all']").click
+    sleep 4
+  end
+  
+  def logbuychat
+    @browser.switch_to.frame("hubspot-conversations-iframe")
+    sleep 4
+    @browser.find_element(:xpath,"//button[@aria-label='Åbn live chat']").click
+    sleep 4
+    @browser.find_element(:xpath, "//button[@aria-label='Luk live chat']").click
+    sleep 4
+  end
+  
+  def logbuychatsuccess
+    @browser.switch_to.default_content
+    sleep 3
+    @browser.find_element(:xpath, "(//a[@class='elements-link-buttons_module_16106654906244'])[2]").click
+
   end
 end
