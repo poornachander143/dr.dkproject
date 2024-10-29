@@ -43,9 +43,22 @@ When('User can test the chatbox') do
   $logbuypage.logbuychat
 end
 
-Then('User done sucessfully with testing the chatbox') do
+When('User done sucessfully with testing the chatbox') do
   $logbuypage.logbuychatsuccess
 end
 
+When('User can done sucessfully login with checkbox') do
+  $logbuypage.loginwithcheckbox
+end
 
+When('User can open the link {string}') do |dropdownurl|
+   $dropdownpage.dropdownwebsite(dropdownurl)
+end
 
+When('User can click on dropdown list') do
+  $dropdownpage.dropdownlist
+end
+
+Then('User can done successfully dropdown testing') do
+  pending # Write code here that turns the phrase above into concrete actions
+end

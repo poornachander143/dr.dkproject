@@ -111,6 +111,70 @@ class Hiperpage
     @browser.switch_to.default_content
     sleep 3
     @browser.find_element(:xpath, "(//a[@class='elements-link-buttons_module_16106654906244'])[2]").click
+    sleep 4
+    @browser.save_screenshot("C:\Users\LENOVO\OneDrive\Desktop\screenshot.png")
+    sleep 4
+  end  
+    
+  def loginwithcheckbox
+    @browser.find_element(:xpath, "//button[@class='  btn-primary-dark']").click
+    sleep 3
+  end
+  
+  def dropdownwebsite(dropdownurl)
+    @browser.navigate.to(dropdownurl)
+    sleep 5
+    
+  end
+  
+  def dropdownlist
+    dropdown = @browser.find_element(:xpath, "//select[@id='dropdown']")
+    dropdown.click
+    sleep 4
+    select = Selenium::WebDriver::Support::Select.new(dropdown)
+    select.select_by(:text, "Option 1")
+    sleep 4
+   
+    dropdownyear = @browser.find_element(:xpath, "//select[@id='year']")
+    dropdownyear.click
+    sleep 4
+    selectyear = Selenium::WebDriver::Support::Select.new(dropdownyear)
+    selectyear.select_by(:index, 24)
+    sleep 4
+    
+    dropdownmonth =  @browser.find_element(:id, "month")
+    dropdownmonth.click
+    sleep 4
+    selectmonth = Selenium::WebDriver::Support::Select.new(dropdownmonth)
+    selectmonth.select_by(:text, "December")
+    sleep 4
+    
+    dropdownday =  @browser.find_element(:id, "day")
+    dropdownday.click
+    sleep 5
+    selectday = Selenium::WebDriver::Support::Select.new(dropdownday)
+    selectday.select_by(:value, '20')
+    sleep 4
+    
+    dropdownstate =  @browser.find_element(:id, "state")
+    dropdownstate.click
+    sleep 4
+    selectstate = Selenium::WebDriver::Support::Select.new(dropdownstate)
+    selectstate.select_by(:text, "Illinois")
+    sleep 4
+    
+    @browser.find_element(:xpath, "//option[@value='python']").click
+    sleep 4
+        
+    dropdownmenu =  @browser.find_element(:id, "ropdownMenuLink")
+    dropdownmenu.click
+    sleep 5
+    selectmenu = Selenium::WebDriver::Support::Select.new(dropdownmenu)
+    selectmenu.select_by(:text, "Google")
+    sleep 4
+    
+    
+    
+  end
 
   end
-end

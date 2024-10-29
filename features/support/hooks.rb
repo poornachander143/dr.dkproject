@@ -13,6 +13,7 @@ Before do |scenario|
   $demoqa = Demoqapage.new(@browser)
   $hiperpage = Hiperpage.new(@browser)
   $logbuypage = Hiperpage.new(@browser)
+  $dropdownpage = Hiperpage.new(@browser)
   
   
 end

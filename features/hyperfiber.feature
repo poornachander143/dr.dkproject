@@ -12,7 +12,12 @@ When  User can scroll down and scroll up
 #When  User can open sucessfully hiper fiber internet
 When  User can open the vismalogbuy "<logbuyurl>"
 When  User can test the chatbox
-Then  User done sucessfully with testing the chatbox
+When  User done sucessfully with testing the chatbox
+When  User can done sucessfully login with checkbox
+
+When User can open the link "<dropdownurl>"
+When  User can click on dropdown list
+Then  User can done successfully dropdown testing
 
 
 
@@ -20,8 +25,8 @@ Then  User done sucessfully with testing the chatbox
 
 Examples:
 
-|hiperurl 									|customeraddress														|						logbuyurl										|	
-|https://www.hiper.dk/  		|clara pontoppidans vej 89, 2th, 2500 valby |						https://www.logbuy.dk/			|
+|hiperurl 									|customeraddress														|						logbuyurl										|				dropdownurl					|
+|https://www.hiper.dk/  		|clara pontoppidans vej 89, 2th, 2500 valby |						https://www.logbuy.dk/			|   	https://practice.cydeo.com/dropdown	|
 
 
                                        
