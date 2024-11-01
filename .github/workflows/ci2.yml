@@ -1,13 +1,6 @@
 name: CI
 
-on:
-  push:
-    branches:
-      - chandu
-  pull_request:
-    branches:
-      - main
-
+on: push
 jobs:
   test:
     runs-on: ubuntu-latest
