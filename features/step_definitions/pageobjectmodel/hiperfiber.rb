@@ -63,7 +63,7 @@ When('User can done successfully dropdown testing') do
   $dropdownpage.dropdownsuccessfully
 end
 
-When('User can click on checkboxwebsite {string}') do |string|
+When('User can click on checkboxwebsite {string}') do |checkboxurl|
   $checkboxpage.checkboxwebsite(checkboxurl)
 end
 
