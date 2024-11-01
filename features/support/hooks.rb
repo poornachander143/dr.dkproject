@@ -14,6 +14,7 @@ Before do |scenario|
   $hiperpage = Hiperpage.new(@browser)
   $logbuypage = Hiperpage.new(@browser)
   $dropdownpage = Hiperpage.new(@browser)
+  $checkboxpage = Hiperpage.new(@browser)
   
   
 end

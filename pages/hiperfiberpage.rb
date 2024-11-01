@@ -166,15 +166,49 @@ class Hiperpage
     @browser.find_element(:xpath, "//option[@value='python']").click
     sleep 4
         
-    dropdownmenu =  @browser.find_element(:id, "ropdownMenuLink")
-    dropdownmenu.click
-    sleep 5
-    selectmenu = Selenium::WebDriver::Support::Select.new(dropdownmenu)
-    selectmenu.select_by(:text, "Google")
+    #@browser.find_element(:xpath, "//a[@id='dropdownMenuLink']").click
+    
+   # sleep 4
+    #selectmenu = Selenium::WebDriver::Support::Select.new(dropdownmenu)
+    #selectmenu.select_by(:xpath, "//a[normalize-space()='Google']")
+    #sleep 4
+  end
+  
+  def dropdownsuccessfully
+    @browser.close
+  end
+  
+  def checkboxwebsite(checkboxurl)
+    @browser.navigate.to(checkboxurl)
     sleep 4
-    
-    
-    
+  end
+  
+  def checkbox
+    @browser.find_element(:xpath, "//input[@id='c_bs_1']").click
+    sleep 4
+  end
+  
+  def radiobutton
+    @browser.find_element(:xpath, "//a[normalize-space()='Radio Button']").click
+    sleep 4
+    @browser.find_element(:xpath, "//input[@value='igotthree']").click
+    sleep 4
+  end
+  
+  def alertbox
+    @browser.find_element(:xpath, "//button[@class='accordion-button']").click
+    sleep 3
+    @browser.find_element(:xpath, "//a[normalize-space()='Alerts']").click
+    sleep 4
+    @browser.find_element(:xpath, "(//button[@class='btn btn-primary'])[1]").click
+    sleep 4
+    alert1 = @browser.swith_to.alert
+    alert1.click
+    sleep 4
+  end
+  
+  def webelementssuccessfully
+    @browser.close
   end
 
   end

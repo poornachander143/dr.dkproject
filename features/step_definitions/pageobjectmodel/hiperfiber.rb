@@ -59,6 +59,28 @@ When('User can click on dropdown list') do
   $dropdownpage.dropdownlist
 end
 
-Then('User can done successfully dropdown testing') do
-  pending # Write code here that turns the phrase above into concrete actions
+When('User can done successfully dropdown testing') do
+  $dropdownpage.dropdownsuccessfully
 end
+
+When('User can click on checkboxwebsite {string}') do |string|
+  $checkboxpage.checkboxwebsite(checkboxurl)
+end
+
+When('User can click on checkbox') do
+  $checkboxpage.checkbox
+end
+
+When('User can click on radiobutton') do
+  $checkboxpage.radiobutton
+end
+
+When('User can click on alertbox') do
+  $checkboxpage.alertbox
+end
+
+Then('User can done sucessfully with webelements') do
+  $checkboxpage.webelementssuccessfully
+end
+
+

@@ -17,7 +17,12 @@ When  User can done sucessfully login with checkbox
 
 When User can open the link "<dropdownurl>"
 When  User can click on dropdown list
-Then  User can done successfully dropdown testing
+When  User can done successfully dropdown testing
+When  User can click on checkboxwebsite "<checkboxurl>"
+When  User can click on checkbox 
+When  User can click on radiobutton
+When  User can click on alertbox
+Then  User can done sucessfully with webelements
 
 
 
@@ -25,8 +30,8 @@ Then  User can done successfully dropdown testing
 
 Examples:
 
-|hiperurl 									|customeraddress														|						logbuyurl										|				dropdownurl					|
-|https://www.hiper.dk/  		|clara pontoppidans vej 89, 2th, 2500 valby |						https://www.logbuy.dk/			|   	https://practice.cydeo.com/dropdown	|
+|hiperurl 									|customeraddress														|						logbuyurl										|				dropdownurl												| 		checkboxurl					|
+|https://www.hiper.dk/  		|clara pontoppidans vej 89, 2th, 2500 valby |						https://www.logbuy.dk/			|   	https://practice.cydeo.com/dropdown	|	https://www.tutorialspoint.com/selenium/practice/check-box.php	|
 
 
                                        
