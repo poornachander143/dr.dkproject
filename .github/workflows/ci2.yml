@@ -20,4 +20,4 @@ jobs:
 
     - name: Run Cucumber tests
       run: |
-        cucumber
+        cucumber dr.dkprojects/features
