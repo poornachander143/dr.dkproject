@@ -20,4 +20,4 @@ jobs:
 
     - name: Run Cucumber tests
       run: |
-        bundle exec cucumber features/hypierfiber.feature
+        bundle exec cucumber features/hyperfiber.feature
