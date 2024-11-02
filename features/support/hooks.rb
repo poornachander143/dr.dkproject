@@ -1,11 +1,9 @@
 require 'selenium-webdriver'
 require_relative '../pages/hyperfiberpage.rb'
-require_relative '..//home/runner/work/dr.dkproject/dr.dkproject/features/pages/hyperfiberpage.rb'
-
 #require_relative 'C:\Users\LENOVO\OneDrive\Desktop\cucumberproject\pages\drsignuppage.rb'
 require_relative 'C:\Users\LENOVO\OneDrive\Desktop\cucumberproject\pages\facebookexample1page.rb'
 require_relative 'C:\Users\LENOVO\OneDrive\Desktop\cucumberproject\pages\practicepage.rb'
-require_relative 'C:\Users\LENOVO\OneDrive\Desktop\cucumberproject\pages\hiperfiberpage.rb'
+#require_relative 'C:\Users\LENOVO\OneDrive\Desktop\cucumberproject\pages\hiperfiberpage.rb'
 Before do |scenario|
   DataMagic.load_for_scenario(scenario)
   @browser = Selenium::WebDriver.for :chrome
