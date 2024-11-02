@@ -62,6 +62,7 @@ GEM
     multi_test (1.1.0)
     nokogiri (1.16.7-x64-mingw-ucrt)
       racc (~> 1.4)
+    ostruct (0.6.0)
     page-object (2.3.1)
       page_navigation (>= 0.10)
       watir (>= 6.10.3)
@@ -129,6 +130,7 @@ PLATFORMS
 DEPENDENCIES
   cucumber
   data_magic
+  ostruct
   page-object (~> 2.0)
   parallel_tests
   rake
