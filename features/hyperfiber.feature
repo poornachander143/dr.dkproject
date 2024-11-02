@@ -17,7 +17,6 @@ When  User can done sucessfully login with checkbox
 
 When User can open the link "<dropdownurl>"
 When  User can click on dropdown list
-When  User can done successfully dropdown testing
 When  User can click on checkboxwebsite "<checkboxurl>"
 When  User can click on checkbox 
 When  User can click on radiobutton

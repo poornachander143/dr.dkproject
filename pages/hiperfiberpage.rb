@@ -174,10 +174,6 @@ class Hiperpage
     #sleep 4
   end
   
-  def dropdownsuccessfully
-    @browser.close
-  end
-  
   def checkboxwebsite(checkboxurl)
     @browser.navigate.to(checkboxurl)
     sleep 4
@@ -192,12 +188,14 @@ class Hiperpage
     @browser.find_element(:xpath, "//a[normalize-space()='Radio Button']").click
     sleep 4
     @browser.find_element(:xpath, "//input[@value='igotthree']").click
-    sleep 4
+    sleep 6
   end
   
   def alertbox
-    @browser.find_element(:xpath, "//button[@class='accordion-button']").click
-    sleep 3
+    alertbox2 = @browser.find_element(:xpath, "(//button[@type='button'])[3]")
+    sleep 5
+    alertbox2.click
+    sleep 4
     @browser.find_element(:xpath, "//a[normalize-space()='Alerts']").click
     sleep 4
     @browser.find_element(:xpath, "(//button[@class='btn btn-primary'])[1]").click
