@@ -1,34 +1,23 @@
-name: Ruby CI
+name: CI
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
+on: push
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.3' # Adjust based on your version
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.0 # Specify your Ruby version
 
-      - name: Install dependencies
-        run: |
-          gem install bundler
-          bundle install
+    - name: Install dependencies
+      run: |
+        bundle install
 
-      - name: List Files for Debugging
-        run: |
-          ls -R features/pages
-
-      - name: Run Tests
-        run: bundle exec cucumber features/hyperfiber.feature
+    - name: Run Cucumber tests
+      run: |
+        cucumber features/hyperfiber.feature
