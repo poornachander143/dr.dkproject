@@ -1,6 +1,10 @@
 name: CI
 
-on: push
+on: 
+  push:
+    branches: 
+      - chandu
+  pull_request:
 
 jobs:
   test:
@@ -17,11 +21,10 @@ jobs:
         bundler-cache: true  # Caches gems to speed up subsequent runs
 
     - name: Install dependencies
-      run: |
-        bundle install
+      run: bundle install
 
     - name: Run Cucumber Tests
       run: |
-        bundle exec cucumber features/hyperfiber.feature
+        bundle exec cucumber features/hyperfiber.feature  # Specify the exact feature file path here
       env:
         DISPLAY: ":99.0"  # Required for headless browser testing
