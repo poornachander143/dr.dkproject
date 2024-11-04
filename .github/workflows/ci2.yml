@@ -1,29 +1,44 @@
-name: Ruby Cucumber CI
+name: CI
 
-on: push
-    
+on:
+  push:
+    branches:
+      - main  # Trigger workflow on pushes to the main branch
+  pull_request:
+    branches:
+      - main  # Also trigger on pull requests to main
 
 jobs:
   test:
     runs-on: ubuntu-latest
 
+    #services:
+      # Optional: Set up services like databases if needed
+      # db:
+      #   image: mysql:5.7
+      #   ports: ['3306:3306']
+      #   options: >-
+      #     --health-cmd="mysqladmin ping"
+      #     --health-interval=10s
+      #     --health-timeout=5s
+      #     --health-retries=3
+
     steps:
-      # Step 1: Checkout code from the repository
-      - name: Checkout code
-        uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      # Step 2: Set up Ruby with the specified version
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.1' # Set to your project's Ruby version
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.3'  # Specify the Ruby version you are using
+        bundler-cache: true  # Caches gems to speed up subsequent runs
 
-      # Step 3: Install dependencies
-      - name: Install dependencies
-        run: |
-          gem install bundler
-          bundle install
+    - name: Install dependencies
+      run: |
+        bundle install
 
-      # Step 4: Run Cucumber tests
-      - name: Run Cucumber tests
-        run: cucumber ./
+    - name: Run Cucumber Tests
+      run: |
+        bundle exec cucumber
+      env:
+        DISPLAY: ":99.0"  # Required for headless browser testing

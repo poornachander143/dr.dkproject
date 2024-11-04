@@ -15,6 +15,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'report_builder'
 gem 'rspec-expectations'
 
+gem 'webdrivers'
+
 gem 'ostruct'
 
 
