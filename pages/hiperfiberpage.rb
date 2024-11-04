@@ -181,7 +181,7 @@ class Hiperpage
   
   def checkbox
     @browser.find_element(:xpath, "//input[@id='c_bs_1']").click
-    sleep 4
+    sleep 5
   end
   
   def radiobutton
@@ -189,6 +189,7 @@ class Hiperpage
     sleep 4
     @browser.find_element(:xpath, "//input[@value='igotthree']").click
     sleep 6
+    
   end
   
   def alertbox
