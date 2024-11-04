@@ -1,12 +1,6 @@
 name: CI
 
-on:
-  push:
-    branches:
-      - main  # Trigger workflow on pushes to the main branch
-  pull_request:
-    branches:
-      - main  # Also trigger on pull requests to main
+on: push
 
 jobs:
   test:
