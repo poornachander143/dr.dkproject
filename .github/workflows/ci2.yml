@@ -26,4 +26,4 @@ jobs:
 
       # Step 4: Run Cucumber tests
       - name: Run Cucumber tests
-        run: bundle exec cucumber
+        run: cucumber ./
