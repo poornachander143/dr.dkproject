@@ -6,6 +6,17 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    #services:
+      # Optional: Set up services like databases if needed
+      # db:
+      #   image: mysql:5.7
+      #   ports: ['3306:3306']
+      #   options: >-
+      #     --health-cmd="mysqladmin ping"
+      #     --health-interval=10s
+      #     --health-timeout=5s
+      #     --health-retries=3
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -17,10 +28,11 @@ jobs:
         bundler-cache: true  # Caches gems to speed up subsequent runs
 
     - name: Install dependencies
-      run: bundle install
+      run: |
+        bundle install
 
     - name: Run Cucumber Tests
       run: |
-        bundle exec cucumber features/hyperfiber.feature  # Specify the exact feature file path here
+        bundle exec cucumber
       env:
         DISPLAY: ":99.0"  # Required for headless browser testing
