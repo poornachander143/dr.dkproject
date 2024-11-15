@@ -3,14 +3,25 @@ jobs:
   build:
     docker:
       - image: ruby:3.2-slim
+        environment:
+          BUNDLE_JOBS: 4  # Speeds up bundle install
+          BUNDLE_RETRY: 3
+
     steps:
-      - checkout
+      - checkout  # Check out your code
+
       - run:
-          name: Install Bundler
-          command: gem install bundler
+          name: Set up Bundler and Cache Dependencies
+          command: |
+            bundle config set --local path vendor/bundle
+            bundle install --jobs 4 --retry 3
+
       - run:
-          name: Install Dependencies
-          command: bundle install
-      - run:
-          name: Run Tests
+          name: Run Cucumber Tests
           command: bundle exec cucumber
+          
+workflows:
+  version: 2
+  test_workflow:
+    jobs:
+      - test
