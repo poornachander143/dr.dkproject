@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: circleci/ruby:3.2  # Use the latest available version like 3.2
+      - image: circleci/ruby:3.3  # Use the latest available version like 3.2
         environment:
           BUNDLE_JOBS: 4  # Speeds up bundle install
           BUNDLE_RETRY: 3
