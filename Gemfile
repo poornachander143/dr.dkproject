@@ -9,7 +9,7 @@ gem 'selenium-cucumber'
 gem 'selenium-webdriver'
 gem 'parallel_tests'
 gem 'rufus-scheduler'
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :x64-mingw-ucrt, :x86_64-linux, :jruby]
 #gem 'cucumber-html-reporter'
 
 gem 'report_builder'
