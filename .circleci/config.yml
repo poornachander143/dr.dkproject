@@ -3,18 +3,21 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: ruby:3.2-slim  # Use a Ruby 3.2 base image
+      - image: circleci/ruby:3.2  # Use Ruby 3.2 Docker image
+        environment:
+          DISPLAY: ":99"  # Required for Selenium headless tests
+      - image: selenium/standalone-chrome:latest  # Selenium standalone container for Chrome browser
+
     steps:
-      - checkout  # Checkout the code from the repository
+      - checkout  # Checkout the code
       
       - run:
           name: Install Bundler
           command: gem install bundler
-      
+
       - run:
           name: Install Dependencies
-          command: |
-            bundle install
+          command: bundle install
 
       - run:
           name: Run Cucumber Tests
