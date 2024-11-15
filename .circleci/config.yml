@@ -3,18 +3,23 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: ruby:3.2-slim  # Use an appropriate Ruby image
+      - image: ruby:3.2-slim  # Use a Ruby 3.2 base image
     steps:
-      - checkout
+      - checkout  # Checkout the code from the repository
+      
       - run:
           name: Install Bundler
           command: gem install bundler
+      
       - run:
           name: Install Dependencies
-          command: bundle install
+          command: |
+            bundle install
+
       - run:
-          name: Run Tests
-          command: bundle exec cucumber
+          name: Run Cucumber Tests
+          command: |
+            bundle exec cucumber
 
 workflows:
   version: 2
