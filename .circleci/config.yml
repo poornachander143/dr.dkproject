@@ -22,7 +22,7 @@ jobs:
       - run:
           name: Run Cucumber Tests
           command: |
-            bundle  cucumber features/google.feature
+            bundle exec cucumber features/google.feature
 
 workflows:
   version: 2
