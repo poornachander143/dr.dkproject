@@ -20,7 +20,7 @@ jobs:
           command: bundle install
 
       - run:
-          name: Run Cucumber Tests
+          name: Run google.feature
           command: |
             bundle exec cucumber features/google.feature
 
