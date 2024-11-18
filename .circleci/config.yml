@@ -3,10 +3,10 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: circleci/ruby:3.2  # Use Ruby 3.2 Docker image
+      - image: ruby:3.3.4  # Use the official Ruby image
         environment:
           DISPLAY: ":99"  # Required for Selenium headless tests
-      - image: selenium/standalone-chrome:latest  # Selenium standalone container for Chrome browser
+      - image: selenium/standalone-chrome:latest  # Selenium container for Chrome browser
 
     steps:
       - checkout  # Checkout the code
