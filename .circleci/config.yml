@@ -3,29 +3,32 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: ruby:3.3.4  # Use the official Ruby image
+      - image: ruby:3.3.4
         environment:
           DISPLAY: ":99"  # Required for Selenium headless tests
-      - image: selenium/standalone-chrome:latest  # Selenium container for Chrome browser
-
     steps:
       - checkout  # Checkout the code
-      
+
       - run:
-          name: Install Bundler
-          command: gem install bundler
+          name: Debug Working Directory
+          command: pwd
+
+      - run:
+          name: List All Files
+          command: ls -R
 
       - run:
           name: Install Dependencies
-          command: bundle install
+          command: bundle install --path vendor/bundle
+
+      - run:
+          name: Debug File Paths
+          command: |
+            if [ ! -f features/pages/hyperfiberpage.rb ]; then
+              echo "File not found: features/pages/hyperfiberpage.rb"
+              exit 1
+            fi
 
       - run:
           name: Run Cucumber Tests
-          command: |
-            bundle exec cucumber features/google.feature
-
-workflows:
-  version: 2
-  test_workflow:
-    jobs:
-      - test
+          command: bundle exec cucumber
