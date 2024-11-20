@@ -1,31 +1,41 @@
 version: 2.1
 
-jobs:
-  test:
+executors:
+  ruby-executor:
     docker:
-      - image: ruby:3.3.4  # Use the official Ruby image
+      - image: circleci/ruby:3.3.0 # Adjust Ruby version as needed
         environment:
-          DISPLAY: ":99"  # Required for Selenium headless tests
-      - image: selenium/standalone-chrome:latest  # Selenium container for Chrome browser
+          BUNDLE_PATH: vendor/bundle
+          DISPLAY: ":99.0" # For Selenium
 
+jobs:
+  setup:
+    executor: ruby-executor
     steps:
-      - checkout  # Checkout the code
-      
-      - run:
-          name: Install Bundler
-          command: gem install bundler
-
+      - checkout
       - run:
           name: Install Dependencies
-          command: bundle install --path vendor/bundle
+          command: |
+            gem install bundler
+            bundle install
 
+  test:
+    executor: ruby-executor
+    steps:
+      - checkout
+      - run:
+          name: Start Xvfb for Selenium
+          command: |
+            Xvfb :99 -screen 0 1280x1024x24 &
       - run:
           name: Run Cucumber Tests
-          command: |
-            bundle exec cucumber features/hyperfiber.feature
+          command: bundle exec cucumber
 
 workflows:
   version: 2
-  test_workflow:
+  build-and-test:
     jobs:
-      - test
+      - setup
+      - test:
+          requires:
+            - setup
