@@ -1,4 +1,5 @@
 require 'selenium-webdriver'
+require_relative './config/environment.rb' 
 #require_relative '../pages/hyperfiberpage.rb'
 require_relative 'C:\Users\LENOVO\OneDrive\Desktop\cucumberproject\pages\drsignuppage.rb'
 require_relative 'C:\Users\LENOVO\OneDrive\Desktop\cucumberproject\pages\facebookexample1page.rb'

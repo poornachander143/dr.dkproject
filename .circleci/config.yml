@@ -22,7 +22,7 @@ jobs:
       - run:
           name: Run Cucumber Tests
           command: |
-            bundle exec cucumber C:\Users\LENOVO\OneDrive\Desktop\cucumberproject\pages\drsignuppage.rb
+            bundle exec cucumber features/hyperfiber.feature
 
 workflows:
   version: 2
