@@ -3,10 +3,10 @@ version: 2.1
 executors:
   ruby-executor:
     docker:
-      - image: circleci/ruby:3.3.0 # Adjust Ruby version as needed
+      - image: circleci/ruby:3.3.4
         environment:
           BUNDLE_PATH: vendor/bundle
-          DISPLAY: ":99.0" # For Selenium
+          DISPLAY: ":99.0"
 
 jobs:
   setup:
@@ -24,16 +24,15 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Start Xvfb for Selenium
-          command: |
-            Xvfb :99 -screen 0 1280x1024x24 &
+          name: Start Xvfb
+          command: Xvfb :99 -screen 0 1280x1024x24 &
       - run:
           name: Run Cucumber Tests
-          command: bundle exec cucumber
+          command: bundle exec cucumber --format pretty --backtrace
 
 workflows:
   version: 2
-  build-and-test:
+  test-workflow:
     jobs:
       - setup
       - test:
