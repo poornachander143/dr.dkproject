@@ -1,25 +1,19 @@
 version: 2.1
-executors:
-  ruby-executor:
-    docker:
-      - image: circleci/ruby:3.2-node-browsers
 
 jobs:
-  build:
-    executor: ruby-executor
+  test:
+    docker:
+      - image: circleci/ruby:3.2-node-browsers
     steps:
       - checkout
       - run:
           name: Install Dependencies
           command: |
-            gem update --system
             gem install bundler
             bundle install
-
       - run:
           name: Run Cucumber Tests
-          command: |
-            bundle exec cucumber features/hyperfiber.feature
+          command: bundle exec cucumber
 
 workflows:
   version: 2
