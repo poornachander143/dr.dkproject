@@ -1,23 +1,20 @@
 version: 2.1
+executors:
+  ruby-executor:
+    docker:
+      - image: circleci/ruby:3.2-node-browsers
 
 jobs:
-  test:
-    docker:
-      - image: ruby:3.3.4  # Use the official Ruby image
-        environment:
-          DISPLAY: ":99"  # Required for Selenium headless tests
-      - image: selenium/standalone-chrome:latest  # Selenium container for Chrome browser
-
+  build:
+    executor: ruby-executor
     steps:
-      - checkout  # Checkout the code11111
-      
-      - run:
-          name: Install Bundler
-          command: gem install bundler
-
+      - checkout
       - run:
           name: Install Dependencies
-          command: bundle install 
+          command: |
+            gem update --system
+            gem install bundler
+            bundle install
 
       - run:
           name: Run Cucumber Tests
