@@ -9,7 +9,7 @@ jobs:
       - image: selenium/standalone-chrome:latest  # Selenium container for Chrome browser
 
     steps:
-      - checkout  # Checkout the code
+      - checkout  # Checkout the code11111
       
       - run:
           name: Install Bundler
