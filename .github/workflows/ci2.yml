@@ -3,7 +3,7 @@ name: Ruby Cucumber CI
 on:
   push:
     branches:
-      - main
+      - chandu
   pull_request:
 
 jobs:
