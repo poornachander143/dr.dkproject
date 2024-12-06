@@ -1,5 +1,3 @@
-version: 2.1
-
 jobs:
   test:
     docker:
@@ -7,22 +5,23 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install ChromeDriver
+          name: Add Google Chrome Repository
+          command: |
+            wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+            echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
+
+      - run:
+          name: Install Chrome
           command: |
             sudo apt-get update
             sudo apt-get install -y google-chrome-stable
-            sudo apt-get install -y chromedriver
+
       - run:
           name: Install Dependencies
           command: |
             gem install bundler
             bundle install
+
       - run:
           name: Run Tests
           command: bundle exec cucumber
-
-workflows:
-  version: 2
-  test:
-    jobs:
-      - test
