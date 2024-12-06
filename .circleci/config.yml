@@ -3,20 +3,26 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: circleci/ruby:3.2-node-browsers
+      - image: circleci/ruby:3.0
     steps:
       - checkout
+      - run:
+          name: Install ChromeDriver
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y google-chrome-stable
+            sudo apt-get install -y chromedriver
       - run:
           name: Install Dependencies
           command: |
             gem install bundler
             bundle install
       - run:
-          name: Run Cucumber Tests
+          name: Run Tests
           command: bundle exec cucumber
 
 workflows:
   version: 2
-  test_workflow:
+  test:
     jobs:
       - test

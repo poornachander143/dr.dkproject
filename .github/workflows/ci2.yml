@@ -1,32 +1,34 @@
-name: Ruby CI
+name: Ruby Cucumber CI
 
 on:
   push:
     branches:
       - main
   pull_request:
-    branches:
-      - main
 
 jobs:
-  run-ruby-script:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    - name: Checkout Code
       uses: actions/checkout@v3
 
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.2 # Specify your Ruby version here
+        ruby-version: 3.0
 
-    - name: Install dependencies
+    - name: Install ChromeDriver
       run: |
-        bundle install || echo "No Gemfile found, skipping"
+        sudo apt-get update
+        sudo apt-get install -y google-chrome-stable
+        sudo apt-get install -y chromedriver
 
-    - name: Execute Ruby script
-      run: cucumber features/google.feature
+    - name: Install Dependencies
+      run: |
+        gem install bundler
+        bundle install
 
-      env:
-        DISPLAY: ":99.0"  # Required for headless browser testing
+    - name: Run Tests
+      run: bundle exec cucumber
