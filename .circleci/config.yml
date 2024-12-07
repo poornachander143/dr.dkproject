@@ -1,36 +1,26 @@
-version: 2.1  # Define version only once
+version: 2.1
+
+executors:
+  ruby-executor:
+    docker:
+      - image: circleci/ruby:3.1  # Replace with your Ruby version
+        environment:
+          BUNDLE_PATH: ~/.bundle
 
 jobs:
-  build:
-    docker:
-      - image: circleci/ruby:3.0  # Replace with your desired Ruby version
+  test:
+    executor: ruby-executor
     steps:
       - checkout
-
-      - run:
-          name: Add Google Chrome Repository
-          command: |
-            wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-            echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee /etc/apt/sources.list.d/google-chrome.list
-
-      - run:
-          name: Install Chrome
-          command: |
-            sudo apt-get update
-            sudo apt-get install -y google-chrome-stable
-
       - run:
           name: Install Dependencies
-          command: |
-            gem install bundler
-            bundle install
-
+          command: bundle install
       - run:
-          name: Run Tests
-          command: bundle exec cucumber
+          name: Run Cucumber Tests
+          command: bundle exec cucumber --format pretty --format json --out cucumber_report.json features/
 
 workflows:
-  version: 2  # Workflows version must not conflict with the top-level version
-  test:
+  version: 2
+  test-workflow:
     jobs:
-      - build  # Reference the job name exactly as defined in the jobs section
+      - test
