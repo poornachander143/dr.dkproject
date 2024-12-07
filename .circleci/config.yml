@@ -17,7 +17,7 @@ jobs:
           command: bundle install
       - run:
           name: Run Cucumber Tests
-          command: bundle exec cucumber --format pretty --format json --out cucumber_report.json features/
+          command: bundle exec cucumber features/drsignup.feature
 
 workflows:
   version: 2
