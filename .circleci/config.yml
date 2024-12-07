@@ -3,7 +3,7 @@ version: 2.1
 executors:
   ruby-executor:
     docker:
-      - image: circleci/ruby:3.1  # Replace with your Ruby version
+      - image: cimg/ruby:3.1
         environment:
           BUNDLE_PATH: ~/.bundle
 
