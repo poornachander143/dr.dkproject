@@ -3,28 +3,24 @@ version: 2.1
 executors:
   ruby-executor:
     docker:
-      - image: circleci/ruby:3.1
-      - image: selenium/standalone-chrome:latest
-    working_directory: ~/project
+      - image: cimg/ruby:3.1
+        environment:
+          BUNDLE_PATH: ~/.bundle
 
 jobs:
-  run-tests:
+  test:
     executor: ruby-executor
     steps:
       - checkout
       - run:
           name: Install Dependencies
-          command: |
-            sudo apt-get update && sudo apt-get install -y libnss3
-            gem install bundler
-            bundle install
+          command: bundle install
       - run:
-          name: Run Cucumber Feature File
-          command: |
-            cucumber features/hyperfiber.feature
+          name: Run Cucumber Tests
+          command: bundle exec cucumber features/drsignup.feature
 
 workflows:
   version: 2
   test-workflow:
     jobs:
-      - run-tests
+      - test
