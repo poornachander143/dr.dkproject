@@ -95,6 +95,8 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-support (3.13.1)
+    rspec_junit_formatter (0.6.0)
+      rspec-core (>= 2, < 4, != 2.12.0)
     rubyzip (2.3.2)
     rufus-scheduler (3.9.1)
       fugit (~> 1.1, >= 1.1.6)
@@ -145,6 +147,7 @@ DEPENDENCIES
   report_builder
   rspec
   rspec-expectations
+  rspec_junit_formatter
   rufus-scheduler
   selenium-cucumber
   selenium-webdriver
